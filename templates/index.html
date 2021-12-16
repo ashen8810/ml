@@ -1,0 +1,390 @@
+
+<!doctype html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Headache Prediction System</title>
+    <link rel="stylesheet" href="./../static/home.css" />
+    <link rel="shortcut icon" href="./../static/img/logo.png" />
+        <meta charset="utf-8">
+        <title>Headache Prediction System</title>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+		<!--link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"-->
+    <style>
+
+        body {
+  background-image: url("static/backgroundimage.jpg");
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+        .content { 
+            background-color: #333333  ;
+            border: 5px ;
+            padding: 30px ; width : 70% ;
+            margin: 50 px;
+            width: 550px;
+            height: 1750px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            color:white;
+
+}
+.footer {
+background-color: black ;
+padding: 5px;
+text-align: center;
+color: white; 
+}
+
+.button1{
+    position:relative;
+    background-color:#606ebd;
+    display:inline;
+
+ 
+    border-radius:15px;
+    border:2px #0e0b42;
+    padding: 15px 32px;
+    outline:none;
+    color:white;
+    cursor:pointer;
+    margin-left: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px; } 
+
+    .button1_reset{
+    position:relative;
+    background-color:#424c82;
+    display:inline;
+ 
+    border-radius:15px;
+    border:2px #0e0b42;
+    padding: 15px 32px;
+    outline:none;
+    color:white;
+    cursor:pointer;
+    margin-left: 40px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+     } 
+
+    .button1:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); }  
+     
+
+    </style>
+
+    </head>
+       
+
+ 
+    <body style="background-color:SeaShell;">
+
+
+
+    <header>
+        <div class="container">
+            <div id="sitename">
+                <img src="./../static/img/logo.png" alt="Site Logo" />
+                <h1>Headache Prediction System</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html#s" id="serv">Services</a></li>
+                    <li><a href="home.html#a">About Us</a></li>
+                    <li><a href="index.html">Prediction</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        <!-- Website Title -->
+        <br><br><br><br><br><br>
+    	<div >
+
+            <h1 style="color:#081b3d; text-align:center"; > Headache Type Prediction </h1> <br><br>
+		
+        <!--div id='description'>
+        		<p>The project is related to Bank loan modelling and to identify the customer who have a higher probality of purchasing Personal loan.</p>
+		</div-->
+		
+        <!-- Input Area -->
+        <div class="content" > 
+
+        <h2>Enter Inputs Here</h2> <br><br> 
+		
+    		
+            <form autocomplete="on" action="{{ url_for('predict') }}" method="POST">
+                <h4 class="name-age">Patient's Name:</h4>
+                <input class="form-age" type="text" name="Name" placeholder="Name" maxlength="20" required="required"><br><br>
+                <h4 class="name-experience">Patient's Age:</h4>
+                <input class="form-experience" type="text" name="Experience" placeholder="Age" maxlength="3" required="required"><br><br>
+                
+                <h4 class="name-family">Patient's Gender:</h4> 
+                <select class="form-opt-family" name="Gender" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    
+                    </select><br><br>
+
+                    <h2 class="name-CCAvg">Enter how you feel about your headache symptoms:</h2>
+                        <br><br>
+
+                
+                <h4 class="name-education">Location:</h4>
+                <select class="form-opt-education" name="Location" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="1">unilateral
+</option>
+                    <option value="2">bilateral
+</option>
+                    <option value="3">orbital
+</option>
+                </select><br><br>
+                <h4 class="name-mortgage">Severity
+:</h4>
+                <select class="form-opt-mortgage" name="Severity" required="required">
+
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="1">severe
+
+</option>
+                    <option value="2">moderate
+
+</option>
+                    <option value="3">mild
+
+</option>
+                </select><br><br>
+                <h4 class="name-mortgage">Characterisation
+
+:</h4>
+                <select class="form-opt-mortgage" name="Characterisation" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="1">pulsating
+
+</option>
+                    <option value="2">pressing
+
+
+</option>
+                    <option value="3">stabbing
+
+
+</option>
+                </select><br><br>
+
+                <h4 class="name-security">An inclination to Vomit:
+:</h4>
+                <select class="form-opt-security" name="Nausea" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select><br><br>
+
+                <h4 class="name-cdacc">Vomitting:</h4>
+                <select class="form-opt-cdacc" name="vomitting" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select><br><br>
+                <h4 class="name-credit">Unwarranted fear in Light:</h4>
+                <select class="form-opt-name-credit" name="Photophobia" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+
+
+
+                <h4 class="name-credit">Unwarranted fear in Sound:</h4>
+                <select class="form-opt-name-credit" name="Phonophobia" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">Pains are becoming more serious:</h4>
+                <select class="form-opt-name-credit" name="Aggravation" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">An important diagnostic clue for infection in eye:</h4>
+                <select class="form-opt-name-credit" name="conjunctival_injection" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">Shedding tears:</h4>
+                <select class="form-opt-name-credit" name="lacrimation" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">Stuffing nose:</h4>
+                <select class="form-opt-name-credit" name="nasal_congestion" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">Nose flowing water:</h4>
+                <select class="form-opt-name-credit" name="rhinorrhoea" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">A term for swelling around the eye:</h4>
+                <select class="form-opt-name-credit" name="eyelid_oedema" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">Sweating:</h4>
+                <select class="form-opt-name-credit" name="sweating" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">Shrinking of your pupil:</h4>
+                <select class="form-opt-name-credit" name="miosis" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">Eyelid drooping:</h4>
+                <select class="form-opt-name-credit" name="ptosis" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+
+                <h4 class="name-credit">Visual symptoms:</h4>
+                <select class="form-opt-name-credit" name="Visual symptoms" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+
+                <br><br>
+                <h4 class="name-credit">Speech disturbance:</h4>
+                <select class="form-opt-name-credit" name="Speech disturbance" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+
+                <br><br>
+                <h4 class="name-credit">Sensory symptoms:</h4>
+                <select class="form-opt-name-credit" name="Sensory symptoms" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+
+                <br><br>
+                <h4 class="name-credit">A condition in which a person sees only one side:</h4>
+                <select class="form-opt-name-credit" name="homonymous_symptomps" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+
+                <br><br>
+                <h4 class="name-credit">A Disorder of speech:</h4>
+                <select class="form-opt-name-credit" name="dysarthria" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">Condition caused by brain damage or spinal cord injury:</h4>
+                <select class="form-opt-name-credit" name="hemiplegic" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br><br>
+                <h4 class="name-credit">Headache Duration:</h4>
+                <select class="form-opt-name-credit" name="Headache Duration" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="1"><1 days</option>
+                    <option value="2">1-14 days</option>
+                    <option value="3">>14 days</option>
+                     <option value="4">7-365 days</option>
+                    <option value="5">>365 days</option>
+                </select>
+                <br><br> <h4 class="name-credit">Previous attacks:</h4>
+                <select class="form-opt-name-credit" name="Prev Attacks" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="1">2-4 times</option>
+                    <option value="2">5-9 times</option>
+                    <option value="3">>10-19 times</option>
+                     <option value="4">20 times</option>
+                    
+                </select>
+                <br><br>
+                 <h4 class="name-credit">Duration:</h4>
+                <select class="form-opt-name-credit" name="Duration" required="required">
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option value="1">D</option>
+                    <option value="2">E</option>
+                    <option value="3">F</option>
+                     <option value="4">G</option>
+                    <option value="6">H</option>
+                    <option value="7">I</option>
+                    <option value="8">J</option>
+
+
+                </select>
+
+                <br> <br>
+
+                <br>
+                <br>
+                <input type="submit" class="button1" value="Predict">
+             </a>
+                
+
+                <input type="reset"  class="button1_reset" value="Reset"> 
+
+            </form>
+        </div>
+        </div>
+                   
+    <!--img class="loan-img" src="{{ url_for('static', filename='personal_loan.jpg') }}" alt="Persoanl Loan Image"--> 
+	<!-- Footer -->
+<h2>{{ prediction_text }}</h2>
+
+<div class="footer">
+    <br><br>  
+
+        <p class='footer-description'> By Hiruni Jayamini & Vageesha Gunasinghe</p> <br><br> 
+			
+    </div>
+          
+    </body>     
+       
+</html>
+
+
+
