@@ -10,7 +10,7 @@ def home():
 
     return render_template('home.html')
 
-@app.route('/index',methods = ["GET","POST"])
+@app.route('/index.html',methods = ["GET","POST"])
 def predict():
     '''
     For rendering results on HTML GUI
